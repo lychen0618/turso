@@ -95,7 +95,10 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- \
     -y \
     --default-toolchain ${RUST_VERSION} \
     --profile minimal \
- && rustup component add rustfmt clippy
+ && rustup component add rustfmt clippy rust-analyzer
+
+RUN mkdir -p /home/node/.cargo/registry
+RUN mkdir -p /home/node/.vscode-server
 
 # Install Python
 
@@ -148,6 +151,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   jq \
   nano \
   vim \
+  clang libclang-dev \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Switch back to node user

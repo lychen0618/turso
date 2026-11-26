@@ -9,7 +9,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "anthropic.claude-code",
+        // "anthropic.claude-code",
+        "saoudrizwan.claude-dev",
         "eamodio.gitlens",
 
         // Rust
@@ -42,7 +43,8 @@
           "zsh": {
             "path": "zsh"
           }
-        }
+        },
+        "rust-analyzer.inlayHints.implicitDrops.enable": false
       }
     }
   }
