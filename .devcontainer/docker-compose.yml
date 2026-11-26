@@ -1,6 +1,6 @@
 services:
   proxy:
-    image: lychen0618/lychen_only:turso-devcontainer-squid:dev
+    image: lychen0618/lychen_only:turso-devcontainer-squid-dev
     networks: [sandbox, egress]
     volumes:
       - ./squid.conf:/etc/squid/squid.conf:ro
@@ -14,7 +14,7 @@ services:
     depends_on:
       proxy:
         condition: service_healthy
-    image: lychen0618/lychen_only:turso-devcontainer-tursodb:dev
+    image: lychen0618/lychen_only:turso-devcontainer-tursodb-dev
     environment:
       NODE_OPTIONS: "--max-old-space-size=4096"
       CLAUDE_CONFIG_DIR: "/home/node/.claude"
